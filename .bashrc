@@ -133,3 +133,6 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[1;33m\]\w \[\033[0;35
     tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
     exec tmux
 }
+
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
