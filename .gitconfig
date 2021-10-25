@@ -1,0 +1,18 @@
+[user]
+	name = xubury
+	email = xubury97@gmail.com
+	signingKey = null
+
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+	ignorecase = false
+	longpaths = true
+[diff]
+	tool = meld
+    guitool = meld
+[merge]
+	tool = meld
+	guitool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"

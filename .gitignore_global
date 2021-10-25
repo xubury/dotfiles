@@ -1,0 +1,38 @@
+# User-specific stuff
+
+#vscode
+.vscode
+
+#Clion
+.idea
+
+#ccls
+.ccls-cache/
+
+#clangd
+.cache
+
+#default build path
+build
+cmake-build-*/
+
+#vimspector
+.vimspector.json
+
+#visual studio
+.vs
+CMakeSettings.json
+
+#codeblocks
+*.depend
+*.layout
+bin
+obj
+
+#vim
+*.swp
+
+# py root
+.env
+pyrightconfig.json
+compile_commands.json
