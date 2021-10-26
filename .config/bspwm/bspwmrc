@@ -26,7 +26,7 @@ bspc config right_padding 0
 bspc config bottom_padding 0
 bspc config left_padding 0
 
-bspc rule -a kitty:scratchy sticky=on state=floating rectangle=widthxheight+Xoffset+Yoffset
+bspc rule -a URxvt:scratchy sticky=on state=floating rectangle=widthxheight+Xoffset+Yoffset
 
 bspc config border_width         2
 bspc config border_radius         12
@@ -41,7 +41,7 @@ bspc config focused_border_color \#fe8019
 # ------- Non-BSPWM related ------
 # --------------------------------
 # Set wallpaper
-feh --bg-fill ~/Images/Wallpapers/rei.jpg
+feh --bg-fill ~/Images/Wallpapers/Yz3LYbQ.png
 # Reload .Xresources
 xrdb -load ~/.Xresources
 # Launch polybar
@@ -49,7 +49,7 @@ xrdb -load ~/.Xresources
 # Change from ugly 'X' cursor when hovering over background
 xsetroot -cursor_name left_ptr
 # Make betterlockscreen generate and cache a background image for locking
-betterlockscreen -u ~/Images/Wallpapers/gruvbox.png
+betterlockscreen -u ~/Images/Wallpapers/gods_die_too.png
 # ------- Autostart apps ------
 # Picom
 picom --xrender-sync-fence &
