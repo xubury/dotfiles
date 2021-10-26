@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	urxvt
 
 # program launcher
 super + d
@@ -131,13 +131,13 @@ super + ctrl + 2
     ~/.screenlayout/2.sh && bspc wm -r
 
 super + x
-    betterlockscreen -l
+    ~/.config/rofi/applets/menu/powermenu.sh
 
 super + r
-	kitty -e ranger
+	urxvt -e ranger
 
 super + shift + r
-	kitty -e sudo ranger
+	urxvt -e sudo ranger
 
 
 # Screen brightness control
