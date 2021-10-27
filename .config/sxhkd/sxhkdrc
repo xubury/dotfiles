@@ -131,7 +131,7 @@ super + ctrl + 2
     ~/.screenlayout/2.sh && bspc wm -r
 
 super + x
-    ~/.config/rofi/applets/menu/powermenu.sh
+    ~/.config/polybar/scripts/powermenu-alt
 
 super + r
 	urxvt -e ranger
