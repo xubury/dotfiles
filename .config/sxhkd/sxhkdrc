@@ -124,12 +124,6 @@ super + alt + shift + {h,j,k,l}
 # ========== User-specific ==========
 # ===================================
 
-super + ctrl + 1
-    ~/.screenlayout/1.sh && bspc wm -r
-
-super + ctrl + 2
-    ~/.screenlayout/2.sh && bspc wm -r
-
 super + x
     ~/.config/polybar/scripts/powermenu-alt
 
