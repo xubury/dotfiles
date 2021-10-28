@@ -184,6 +184,9 @@ tnoremap <Esc> <C-\><C-n>
 " tag bar mapping
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
+" clipboard
+" set clipboard + =unnamedplus
+
 " WSL yank support
 let s:clip = 'clip.exe'  " change this path according to your mount point
 if executable(s:clip)
