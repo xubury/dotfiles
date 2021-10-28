@@ -1,9 +1,16 @@
-URxvt.perl-ext-common: default,xresources-256
+URxvt.perl-ext-common: default,clipboard,xresources-256
 URxvt*scrollBar: 	false
 URxvt*font:		    xft:JetBrainsMono Nerd Font Mono:style=Regular:size=12,xft:Siji:style=Regular:size=12,xft:Iosevka:style=Regular:size=12,xft:WenQuanYi Micro Hei Mono:style=Regular:size=12
 URxvt*iso14755:		false
 URxvt*iso14755_52:	false
 Xcursor.size: 16
+
+*antialias:  true
+*autohint:   true
+
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !!! Gruvbox theme
 ! hard contrast: *background: #1d2021
