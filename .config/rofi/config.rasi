@@ -1,6 +1,6 @@
 configuration {
   drun-display-format: "{name}";
-  theme: "gruvbox";
+  theme: "gruvbox-drun";
   timeout {
       action: "kb-cancel";
       delay:  0;
