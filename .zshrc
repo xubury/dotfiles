@@ -1,13 +1,31 @@
-#
-# ~/.bashrc
-#
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-LANG=en_US.UTF-8
+# Path to your oh-my-zsh installation.
+export ZSH="/home/bury/.oh-my-zsh"
 
-source ~/.git-prompt.sh
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
 # This function defines a 'cd' replacement function capable of keeping,
 # displaying and accessing history of visited directories, up to 10 entries.
 # To use it, uncomment it, source this file and try 'cd --'.
@@ -83,61 +101,30 @@ fi
 alias ll='ls -lh'
 alias la='ls -alh'
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-## Print nickname for git/hg/bzr/svn version control in CWD
-## Optional $1 of format string for printf, default "(%s) "
-function be_get_branch {
-  local dir="$PWD"
-  local vcs
-  local nick
-  while [[ "$dir" != "/" ]]; do
-    for vcs in git hg svn bzr; do
-      if [[ -d "$dir/.$vcs" ]] && hash "$vcs" &>/dev/null; then
-        case "$vcs" in
-          git) __git_ps1 "${1:-(%s) }"; return;;
-          hg) nick=$(hg branch 2>/dev/null);;
-          svn) nick=$(svn info 2>/dev/null\
-                | grep -e '^Repository Root:'\
-                | sed -e 's#.*/##');;
-          bzr)
-            local conf="${dir}/.bzr/branch/branch.conf" # normal branch
-            [[ -f "$conf" ]] && nick=$(grep -E '^nickname =' "$conf" | cut -d' ' -f 3)
-            conf="${dir}/.bzr/branch/location" # colo/lightweight branch
-            [[ -z "$nick" ]] && [[ -f "$conf" ]] && nick="$(basename "$(< $conf)")"
-            [[ -z "$nick" ]] && nick="$(basename "$(readlink -f "$dir")")";;
-        esac
-        [[ -n "$nick" ]] && printf "${1:-(%s) }" "$nick"
-        return 0
-      fi
-    done
-    dir="$(dirname "$dir")"
-  done
-}
-
-stty -ixon
-
-## Add branch to PS1 (based on $PS1 or $1), formatted as $2
-export GIT_PS1_SHOWDIRTYSTATE=yes
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[1;33m\]\w \[\033[0;35m\]\$(be_get_branch "$2")\n\[\033[0m\]\$ "
-
-[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-    [[ -n "$ATTACH_ONLY" ]] && {
-        tmux a 2>/dev/null || {
-            cd && exec tmux
-        }
-        exit
-    }
-
-    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-    exec tmux
-}
 
 export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 export HTTP_PROXY=${http_proxy}
 export HTTPS_PROXY=${https_proxy}
 
- export VISUAL=nvim;
- export EDITOR=nvim;
+export VISUAL=nvim
+export EDITOR=nvim
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/bury/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# Fix Java full screen applications (such as JetBrains Rider)
+export _JAVA_AWT_WM_NONREPARENTING=1
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
