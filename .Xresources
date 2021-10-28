@@ -1,6 +1,6 @@
 URxvt.perl-ext-common: default,xresources-256
 URxvt*scrollBar: 	false
-URxvt*font:		    xft:JetBrainsMono Nerd Font Mono:style=Regular:size=12,xft:WenQuanYi Micro Hei Mono:style=Regular:size=12
+URxvt*font:		    xft:JetBrainsMono Nerd Font Mono:style=Regular:size=12,xft:Siji:style=Regular:size=12,xft:Iosevka:style=Regular:size=12,xft:WenQuanYi Micro Hei Mono:style=Regular:size=12
 URxvt*iso14755:		false
 URxvt*iso14755_52:	false
 Xcursor.size: 16
