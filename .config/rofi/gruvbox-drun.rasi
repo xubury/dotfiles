@@ -18,8 +18,8 @@ configuration {
 	gruvbox0: #928374;
 	gruvbox6: #928374;
 	gruvbox7: #1d2021;
-	gruvbox9: #282828;
-	gruvbox10: #282828;
+	gruvbox9: #3c3836;
+	gruvbox10: #928374;
 
   foreground:  @gruvbox9;
   backlight:   #ccffeedd;
@@ -34,7 +34,7 @@ window {
     location: center;
     anchor:   center;
     transparency: "screenshot";
-    padding: 10px;
+    padding: 0px;
     border:  0px;
     border-radius: 6px;
 
@@ -53,7 +53,7 @@ message {
     color: @gruvbox0;
     padding: 5;
     border-color: @foreground;
-    border:  0px 2px 2px 2px;
+    border:  2px 2px 2px 2px;
     background-color: @gruvbox7;
 }
 
@@ -62,7 +62,7 @@ inputbar {
     padding: 11px;
     background-color: #1d2021;
 
-    border: 1px;
+    border: 2px;
     border-radius:  6px;
     border-color: @gruvbox10;
 }
@@ -80,7 +80,7 @@ listview {
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
     border-color: @gruvbox10;
-    border: 0px 1px 1px 1px;
+    border: 0px 2px 2px 2px;
     background-color: #282828FF;
     dynamic: true;
     fixed-height: false;
