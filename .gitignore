@@ -1,7 +1,8 @@
 *
 !.config/betterlockscreenrc
 !.config/picom.conf
-!.bashrc
+!.zshrc
+!.p10k.zsh
 !.tmux.conf
 !.gitconfig
 !.gitignore
