@@ -108,6 +108,8 @@ setopt COMPLETE_ALIASES
 autoload -Uz promptinit
 promptinit
 
+bindkey -e
+
 # Fix Java full screen applications (such as JetBrains Rider)
 export _JAVA_AWT_WM_NONREPARENTING=1
 
