@@ -11,7 +11,7 @@
     unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'
 
     typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-        time
+        # time
         background_jobs
         context
         dir
@@ -58,7 +58,7 @@
     typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
     ####################################[ time: current time ]####################################
-    typeset -g POWERLEVEL9K_TIME_FOREGROUND=yellow
+    typeset -g POWERLEVEL9K_TIME_FOREGROUND=214
     typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
     typeset -g POWERLEVEL9K_TIME_PREFIX=''
     typeset -g POWERLEVEL9K_TIME_CONTENT_EXPANSION='%B${P9K_CONTENT}'
@@ -68,23 +68,23 @@
     typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION=" "
 
     ##################################[ context: user@hostname ]##################################
-    typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=107
+    typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=108
     typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=red
-    typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%fas '
+    typeset -g POWERLEVEL9K_CONTEXT_PREFIX=
 
     if (( P9K_SSH )); then
         POWERLEVEL9K_CONTEXT_TEMPLATE='%B%n@%m'
     else
-        POWERLEVEL9K_CONTEXT_TEMPLATE=
+        POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
         POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%n'
     fi
 
     ##################################[ dir: current directory ]##################################
-    typeset -g POWERLEVEL9K_DIR_FOREGROUND=72
+    typeset -g POWERLEVEL9K_DIR_FOREGROUND=109
     typeset -g POWERLEVEL9K_DIR_PREFIX='%fin '
     typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
     typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
-    typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
+    typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=false
 
     local anchor_files=(
         .git
@@ -126,7 +126,7 @@
 
         if (( $1 )); then
             # Styling for up-to-date Git status.
-            local clean='%F{#d3869b}'
+            local clean='%F{208}'
             local meta='%F{yellow}'
             local stashes='%F{cyan}'
             local conflicted='%F{magenta}'
@@ -203,8 +203,8 @@
 
     typeset -g POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY=-1
     typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
-    typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='%B${$((my_git_formatter(1)))+${my_git_format}}'
-    typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION='%B${$((my_git_formatter(0)))+${my_git_format}}'
+    typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${$((my_git_formatter(1)))+${my_git_format}}'
+    typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION='${$((my_git_formatter(0)))+${my_git_format}}'
     typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 
     typeset -g POWERLEVEL9K_VCS_PREFIX='%fon '
@@ -242,7 +242,7 @@
     typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_CONTENT_EXPANSION='%B${P9K_CONTENT}'
 
     ################################[ prompt_char: prompt symbol ]################################
-    typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=green
+    typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=142
     typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=red
     typeset -g POWERLEVEL9K_PROMPT_CHAR_CONTENT_EXPANSION='%(#.#.$)'
 
