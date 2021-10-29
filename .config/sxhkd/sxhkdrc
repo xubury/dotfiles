@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	kitty
 
 # program launcher
 super + d
@@ -128,10 +128,10 @@ super + x
     ~/.config/polybar/scripts/powermenu-alt
 
 super + r
-	urxvt -e ranger
+	kitty -e ranger
 
 super + shift + r
-	urxvt -e sudo ranger
+	kitty -e sudo ranger
 
 
 # Screen brightness control

@@ -12,9 +12,7 @@
 !.gtkrc-2.0
 !.pam_environment
 !.xinitrc
-!.Xresources
-!.urxvt/*
-!.urxvt/ext/*
+!.config/kitty/*
 !.config/bspwm/*
 !.config/sxhkd/*
 !.config/polybar/*

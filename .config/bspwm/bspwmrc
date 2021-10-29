@@ -28,7 +28,6 @@ bspc config right_padding 0
 bspc config bottom_padding 0
 bspc config left_padding 0
 
-bspc rule -a urxvt:scratchy sticky=on state=floating rectangle=widthxheight+Xoffset+Yoffset
 bspc rule -a SDEditor state=floating
 
 bspc config border_width         3
