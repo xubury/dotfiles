@@ -190,11 +190,11 @@
         (( VCS_STATUS_NUM_STAGED ))                                       && res+="${staged}●"
 
         if (( VCS_STATUS_COMMITS_BEHIND && VCS_STATUS_COMMITS_AHEAD )); then
-            res+="${outofsync}"
+            res+="${outofsync}"
         elif (( VCS_STATUS_COMMITS_BEHIND )); then
-            res+="${outofsync}"
+            res+="${outofsync}"
         elif (( VCS_STATUS_COMMITS_AHEAD )); then
-            res+="${outofsync}"
+            res+="${outofsync}"
         fi
 
         typeset -g my_git_format="$res"
