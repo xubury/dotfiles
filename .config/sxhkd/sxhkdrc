@@ -124,6 +124,9 @@ super + alt + shift + {h,j,k,l}
 # ========== User-specific ==========
 # ===================================
 
+super + a
+    maim -s -u | xclip -selection clipboard -t image/png -i && xclip -selection clipboard -t image/png -o > /tmp/clipboard.png
+
 super + x
     ~/.config/polybar/scripts/powermenu-alt
 
