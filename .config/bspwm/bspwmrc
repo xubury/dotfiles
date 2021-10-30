@@ -54,7 +54,7 @@ xsetroot -cursor_name left_ptr
 betterlockscreen -u ~/Pictures/gods_die_too.png
 # ------- Autostart apps ------
 # Picom
-picom --xrender-sync-fence &
+picom --experimental-backend  --xrender-sync-fence &
 # Dunst
 dunst &
 # network-manager-applet
