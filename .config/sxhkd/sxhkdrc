@@ -124,8 +124,11 @@ super + alt + shift + {h,j,k,l}
 # ========== User-specific ==========
 # ===================================
 
+Print
+    ~/.local/scripts/screenshot.sh
+
 super + a
-    maim -s -u | xclip -selection clipboard -t image/png -i && xclip -selection clipboard -t image/png -o > /tmp/clipboard.png
+    ~/.local/scripts/screenshot.sh 1
 
 super + x
     ~/.local/scripts/powermenu
