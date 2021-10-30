@@ -128,7 +128,7 @@ super + a
     maim -s -u | xclip -selection clipboard -t image/png -i && xclip -selection clipboard -t image/png -o > /tmp/clipboard.png
 
 super + x
-    ~/.config/polybar/scripts/powermenu-alt
+    ~/.local/scripts/powermenu
 
 super + r
 	kitty -e ranger
