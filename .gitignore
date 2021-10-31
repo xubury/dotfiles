@@ -26,5 +26,8 @@
 !.config/nvim/plugin/*
 !.config/ranger/*
 !.config/zathura/*
+!.local/
 !.local/scripts/*
-!~/.local/share/applications/*
+!.local/share/
+!.local/share/applications/
+!.local/share/applications/*
