@@ -160,19 +160,7 @@ no <C-k> <C-w>k| "switching to above window
 no <C-l> <C-w>l| "switching to right window
 no <C-h> <C-w>h| "switching to left window
 
-" Copy without overriding the register
-function! RestoreRegister()
-    let @" = s:restore_reg
-    return ''
-endfunction
-
-function! s:Repl()
-    let s:restore_reg = @"
-    return "p@=RestoreRegister()\<cr>"
-endfunction
-
-" NB: this supports "rp that replaces the selection by the contents of @r
-vnoremap <silent> <expr> p <sid>Repl()
+vnoremap p "_dP
 
 " Async
 let g:asyncrun_open = 6
@@ -185,7 +173,7 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " WSL yank support
 let s:clip = 'clip.exe'  " change this path according to your mount point
