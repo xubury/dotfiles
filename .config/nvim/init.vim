@@ -160,8 +160,6 @@ no <C-k> <C-w>k| "switching to above window
 no <C-l> <C-w>l| "switching to right window
 no <C-h> <C-w>h| "switching to left window
 
-vnoremap p "_dP
-
 " Async
 let g:asyncrun_open = 6
 let g:asyncrun_bell = 1
