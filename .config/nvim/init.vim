@@ -33,10 +33,10 @@ Plug 'junegunn/vim-emoji'
 " status line
 Plug 'itchyny/lightline.vim'
 
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'preservim/nerdcommenter'
@@ -55,11 +55,11 @@ Plug 'andrejlevkovitch/vim-lua-format'
 Plug 'preservim/tagbar'
 
 " telescope
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -137,7 +137,7 @@ nnoremap t `
 :command Q q
 :command Qa qa
 
-set sel=inclusive
+" set sel=inclusive
 " Go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
