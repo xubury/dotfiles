@@ -37,17 +37,7 @@ require('telescope').setup({
      preview = {
        timeout = 500,
        buffer_previewer_maker = new_maker,
-     },
-     vimgrep_arguments = {
-       "rg",
-       "--color=never",
-       "--no-heading",
-       "--with-filename",
-       "--line-number",
-       "--column",
-       "--smart-case",
-       "--hidden",
-     },
+     }
     },
 })
 
