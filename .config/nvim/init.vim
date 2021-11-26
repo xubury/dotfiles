@@ -46,7 +46,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/vim-emoji'
 
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 Plug 'preservim/nerdcommenter'
 " Plug 'puremourning/vimspector'
@@ -114,7 +115,6 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set showmatch
-set nohlsearch
 
 let mapleader = "\\"
 
@@ -163,7 +163,6 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
-noremap <C-w> :q<cr>
 noremap <space><tab> :b# <cr>
 noremap <space>w :bp<cr>:bd #<cr>
 noremap <leader>n :noh<cr>
