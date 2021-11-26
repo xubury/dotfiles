@@ -34,8 +34,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'ilyachur/cmake4vim'
 
 " color scheme
-Plug 'morhetz/gruvbox'
-Plug 'junegunn/vim-emoji'
+Plug 'lifepillar/vim-gruvbox8'
 
 " status line
 Plug 'itchyny/lightline.vim'
@@ -43,7 +42,10 @@ Plug 'itchyny/lightline.vim'
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'junegunn/vim-emoji'
+
 Plug 'airblade/vim-gitgutter'
 
 Plug 'preservim/nerdcommenter'
@@ -120,7 +122,10 @@ set spelllang=en
 
 set termguicolors
 syntax enable
-colorscheme gruvbox
+set background=dark
+let g:gruvbox_italics=0
+let g:gruvbox_italicize_strings=0
+colorscheme gruvbox8
 
 set cursorline
 set smarttab

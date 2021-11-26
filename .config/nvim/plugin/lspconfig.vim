@@ -1,10 +1,13 @@
 lua << EOF
+
+local signature_cfg = {}
+require 'lsp_signature'.setup(signature_cfg)
+
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  require "lsp_signature".on_attach()
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -13,6 +16,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
+  local api = vim.api
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -24,7 +28,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   buf_set_keymap('n', 'gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
@@ -47,11 +51,11 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local servers = { 
+local servers = {
     clangd = {
         cmd = {"clangd", "--background-index", "-cross-file-rename",
                "--suggest-missing-includes", "--header-insertion=never", "--clang-tidy", "--pretty"}
-    },  -- Cpp 
+    },  -- Cpp
     cmake = {}, -- CMake
     texlab = {}, -- Latex
     vimls = {}, -- Vim
@@ -83,13 +87,17 @@ local servers = {
 }
 
 for lsp, config in pairs(servers) do
-    nvim_lsp[lsp].setup {
-    cmd = config["cmd"] ~= nil and config["cmd"] or cmd,
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+   nvim_lsp[lsp].setup {
+   cmd = config["cmd"] ~= nil and config["cmd"] or cmd,
+   settings = config["settings"] ~= nil and config["settings"] or settings,
+   capabilities = capabilities,
+   on_attach = on_attach,
+   highlight = {
+       lsRanges = true
+   },
+   flags = {
+     debounce_text_changes = 150,
+   }
+ }
 end
 EOF
