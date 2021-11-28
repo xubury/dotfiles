@@ -1,18 +1,6 @@
-configuration {
+/* configuration { */
 
-	font: "FiraCode Nerd Font 14";
-	width: 30;
-	line-margin: 10;
-	lines: 6;
-	columns: 1;
-
-  display-ssh:    "";
-  display-run:    "";
-  display-drun:   "︁";
-  display-window: "";
-  display-combi:  "";
-  show-icons:     true;
-}
+/* } */
 
 * {
 	gruvbox0: #928374;
