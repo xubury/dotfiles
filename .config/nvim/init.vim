@@ -15,6 +15,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
+Plug 'ray-x/navigator.lua'
 
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -39,20 +41,15 @@ Plug 'lifepillar/vim-gruvbox8'
 " status line
 Plug 'itchyny/lightline.vim'
 
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/vim-emoji'
 
-" Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 
 Plug 'preservim/nerdcommenter'
 " Plug 'puremourning/vimspector'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'windwp/nvim-autopairs'
 
 Plug 'godlygeek/tabular'
 Plug 'Chiel92/vim-autoformat'
@@ -60,9 +57,6 @@ Plug 'lervag/vimtex'
 
 "lua plugin
 Plug 'andrejlevkovitch/vim-lua-format'
-
-" tagbar
-Plug 'preservim/tagbar'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
@@ -180,8 +174,6 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 tnoremap <Esc> <C-\><C-n>
 
-" tag bar mapping
-nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " clipboard
 set clipboard+=unnamedplus
