@@ -1,3 +1,7 @@
+hi default GHTextViewDark guifg=#ebdbb2 guibg=#282828
+hi default GHListDark guifg=#ebdbb2 guibg=#282828
+hi default GHListHl guifg=#ebdbb2 guibg=#282828
+
 lua << EOF
 
 require('nvim-autopairs').setup({

@@ -10,6 +10,7 @@
 !.gtkrc-2.0
 !.pam_environment
 !.xinitrc
+!.config
 
 !.config/betterlockscreenrc
 !.config/picom.conf
