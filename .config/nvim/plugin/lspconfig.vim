@@ -16,6 +16,7 @@ require('navigator').setup({
         servers = {'cmake'},
         format_on_save = false,
     },
+    default_mapping = false,
     keymaps={
         {
             key = 'gd', func = "require('navigator.definition').definition()"
