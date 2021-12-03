@@ -44,6 +44,8 @@
 !.config/nvim/plugin/*
 !.config/nvim/lua/
 !.config/nvim/lua/*
+!.config/nvim/lua/plugin/
+!.config/nvim/lua/plugin/*
 
 !.config/ranger/*
 !.config/zathura/*
