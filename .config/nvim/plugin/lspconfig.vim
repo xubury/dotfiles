@@ -14,12 +14,22 @@ require('lsp_signature').setup()
 require('navigator').setup({
     lsp = {
         servers = {'cmake'},
+        diagnostic_update_in_insert = true,
+        disply_diagnostic_qf = false,
         format_on_save = false,
+        clangd = {
+             cmd = {"clangd", "--background-index", "-cross-file-rename",
+                    "--suggest-missing-includes", "--header-insertion=never", 
+                    "--clang-tidy", "--pretty"}
+        },
     },
     default_mapping = false,
     keymaps={
         {
             key = 'gd', func = "require('navigator.definition').definition()"
+        },
+        {
+            key = "K", func = "hover({ popup_opts = { border = single, max_width = 80 }})"
         },
         {
             key = 'ca', func = "require('navigator.codeAction').code_action()"
