@@ -31,11 +31,11 @@ fi
 alias ll='ls -lh'
 alias la='ls -alh'
 
-
-export http_proxy=http://127.0.0.1:7890
-export https_proxy=http://127.0.0.1:7890
-export HTTP_PROXY=${http_proxy}
-export HTTPS_PROXY=${https_proxy}
+export host_port=7890
+sed -i "115c socks5 $WSL_HOST_IP $host_port" ~/.proxychains/proxychains.conf
+export all_proxy="socks5://${WSL_HOST_IP}:${host_port}"
+export ALL_PROXY=${all_proxy}
+export DISPLAY=${WSL_HOST_IP}:0
 
 export VISUAL=nvim
 export EDITOR=nvim
