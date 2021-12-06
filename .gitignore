@@ -38,6 +38,7 @@
 !.config/mpd/mpd.conf
 !.config/ncmpcpp/config
 
+!.config/nvim
 !.config/nvim/
 !.config/nvim/*
 !.config/nvim/plugin/
