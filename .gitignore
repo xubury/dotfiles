@@ -51,6 +51,10 @@
 !.config/ranger/*
 !.config/zathura/*
 
+!.config/fontconfig
+!.config/fontconfig/
+!.config/fontconfig/*
+
 !.local/
 !.local/scripts/
 !.local/scripts/*
