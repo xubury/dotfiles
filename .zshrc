@@ -40,12 +40,16 @@ export HTTPS_PROXY=${https_proxy}
 export VISUAL=nvim
 export EDITOR=nvim
 
-autoload -Uz compinit
+setopt COMPLETE_ALIASES
+setopt AUTO_PUSHD                  # pushes the old directory onto the stack
+setopt PUSHD_MINUS                 # exchange the meanings of '+' and '-'
+setopt CDABLE_VARS                 # expand the expression (allows 'cd -2/tmp')
+
+autoload -U compinit
 compinit
 
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
-setopt COMPLETE_ALIASES
 
 autoload -Uz promptinit
 promptinit
