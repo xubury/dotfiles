@@ -31,11 +31,12 @@ fi
 alias ll='ls -lh'
 alias la='ls -alh'
 
+export host_IP=`grep -oP  "(\d+\.)+(\d+)" /etc/resolv.conf`
 export host_port=7890
-sed -i "115c socks5 $WSL_HOST_IP $host_port" ~/.proxychains/proxychains.conf
-export all_proxy="socks5://${WSL_HOST_IP}:${host_port}"
+sed -i "115c socks5 $host_IP $host_port" ~/.proxychains/proxychains.conf
+export all_proxy="socks5://${host_IP}:${host_port}"
 export ALL_PROXY=${all_proxy}
-export DISPLAY=${WSL_HOST_IP}:0
+export DISPLAY=${host_IP}:0
 
 export VISUAL=nvim
 export EDITOR=nvim
